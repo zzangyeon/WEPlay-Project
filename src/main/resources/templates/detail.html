@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/css/detail.css">
+<div th:replace="fragment/header :: header"/>
+
+
+    <div class="detail-container">
+
+        <div class="top-wrapper">
+            <img class="thumbnail" src="/보드카페.jpg">
+            <div class="discription-wrapper">
+                <p class="name" th:text="${place.name}">큐브 보드게임</p>
+                <div class="discription" th:text="${place.content}">100여가지의 보드게임이 준비되어있습니다! 신나게 놀 준비 되셨나요~! 룰루 랄랄라</div>
+                <p class="tel" th:text="${place.tel}"></p>
+            </div>
+        </div>
+
+        <img class="introduce" src="/보드1.jpg">
+
+        <div class="information-wrapper">
+            <div class="business-info" th:text="${place.info}">이용정보 1시간 10000원 2시간 15000원</div>
+            <div class="menu" th:text="${place.menu}">주요메뉴 </div>
+            <img class="map" src="/서울지도.jpg">
+        </div>
+
+        <hr class="line">
+
+        <h3>[리뷰]</h3>
+        <div class="review-wrapper">
+            <th:block th:each="review : ${reviews}">
+            <div class="review">
+                <div class="review-content-wrapper">
+                    <div class="user-profile">
+                        <div class="user-image-outline">
+                            <img class="user-image" src="/보드카페.jpg" >
+                        </div>
+                        <div class="user-info">
+                            <b><div>최지연</div></b>
+                            <div th:text="${review.regdate}">2022-02-02</div>
+                        </div>
+                    </div>
+                    <div class="real-content" th:text="${review.content}">정말 재밌어요~! 사장님도 친절하세요! 게임 방법 상세히 설명해주시고 서비스도 주셨어요! ㅎㅎ 감사합니다</div>
+                </div>
+                <div class="review-image-wrapper">
+                    <img class="review-image" th:src="|/${review.image}|">
+                    <img class="review-image" th:src="|/${review.image}|">
+                </div>
+            </div>
+            <hr class="review-line">
+            </th:block>
+        </div>
+
+        <div class="pay-wrapper">
+        </div>
+
+    </div>
+
+
+
+
+</body>
+</html>

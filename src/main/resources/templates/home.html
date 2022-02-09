@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/css/home.css">
+<div th:replace="fragment/header :: header"/>
+
+    <div class="map-container">
+            <img id="map" src="/서울지도.jpg">
+    </div>
+
+    <div class="region" th:text="${region}">강남구</div>
+
+    <div class="home-container">
+
+        <div class="item" th:each="place : ${places}" th:onclick="|location.href='/place/${place.id}'|">
+           <input class="place-id" type="hidden" th:value="${place.id}" name="placeId" />
+            <div class="thumbnail-wrapper">
+                <img class="thumbnail" src="/보드카페.jpg"/>
+            </div>
+            <div class="content">
+                <div class="name">
+                    <p th:text="${place.name}">장소이름</p>
+                </div>
+                <div class="discription">
+                    <p th:text="${place.content}">요약</p>
+                </div>
+                <div class="address">
+                    <p>by <b th:text="${place.address}">주소</b></p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+.map-container {
+    display:flex;
+    width: 78%;
+    margin: auto;
+    margin-top: 25px;
+    flex-flow:row wrap;
+    justify-content: center;
+    /*background-color: aquamarine;*/
+    /*height:100vh;*/
+    /*box-sizing:border-box;*/
+}
+#map{
+    width: 700px;
+    height: 550px;
+    background-color: bisque;
+}
+.region{
+    width: 120px;
+    height: 50px;
+    margin-left: 365px;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+.home-container {
+    display:flex;
+    width: 78%;
+    margin: auto;
+    margin-top: 20px;
+    flex-flow:row wrap;
+    justify-content: center;
+    /*background-color: aquamarine;*/
+    /*height:100vh;*/
+    /*box-sizing:border-box;*/
+}
+.item {
+    width: 365px;
+    height: 400px;
+    margin: 20px;
+    box-shadow: 1px 1px 5px #d2d2d2;
+    border-radius: 5px;
+    border: 2px;
+    cursor:pointer;
+    /*background-color: cornflowerblue;*/
+    /*flex-basis:50%;*/
+    /*box-sizing:border-box;*/
+}
+.thumbnail-wrapper{
+    width: 365px;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+.thumbnail{
+    width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.button {
+	cursor:pointer;
+}
+.item:hover {
+    
+	background-color:bisque;
+}
