@@ -32,6 +32,6 @@ public class Place {
     private boolean partner;
 
     @OneToMany(mappedBy = "place",fetch = FetchType.LAZY)
-    private List<Item> itemList;
+    private List<Item> items;
 
 }

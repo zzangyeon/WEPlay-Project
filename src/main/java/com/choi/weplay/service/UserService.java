@@ -1,7 +1,9 @@
 package com.choi.weplay.service;
 
 import com.choi.weplay.domain.Place;
+import com.choi.weplay.domain.User;
 import com.choi.weplay.repository.PlaceRepository;
+import com.choi.weplay.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -12,20 +14,13 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class PlaceService {
+public class UserService {
 
-    private final PlaceRepository placeRepository;
+    private final UserRepository userRepository;
 
     @Transactional
-    public List<Place> getPlaceList(String region) {
+    public User getUser(int id) {
         log.info("Get Place List 진행");
-        return placeRepository.findByRegion(region);
+        return userRepository.findById(id);
     }
-
-    @Transactional
-    public Place getPlace(int id) {
-        log.info("Get Place 진행");
-        return placeRepository.findByIdWithItems(id);
-    }
-
 }
