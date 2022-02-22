@@ -22,10 +22,18 @@ public class PlaceController {
     private final ReviewService reviewService;
 
     @GetMapping("/")
-    public String place(Model model) {
+    public String home(Model model) {
         log.info("home 접속 진행");
-        model.addAttribute("places", placeService.getPlaceList("강남구"));
         model.addAttribute("region","강남구");
+        model.addAttribute("places", placeService.getPlaceList("강남구"));
+        return "home";
+    }
+
+    @GetMapping("/region/{name}")
+    public String homeByRegion(@PathVariable String name, Model model) {
+        log.info("지역별 place list 진행");
+        model.addAttribute("region",name);
+        model.addAttribute("places", placeService.getPlaceList(name));
         return "home";
     }
 
@@ -36,6 +44,5 @@ public class PlaceController {
         model.addAttribute("place", placeService.getPlace(id));
         return "detail";
     }
-
 
 }

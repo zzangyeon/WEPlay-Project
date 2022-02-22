@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -30,5 +31,7 @@ public class Place {
     private String address;
     private boolean partner;
 
+    @OneToMany(mappedBy = "place",fetch = FetchType.LAZY)
+    private List<Item> itemList;
 
 }

@@ -11,3 +11,11 @@
     font-size: 60px;
 }
 
+.basic-container{
+    display:flex;
+    width: 60%;
+    margin: auto;
+    margin-top: 70px;
+    flex-flow:column;
+    justify-content: center;
+}

@@ -25,9 +25,7 @@ public class PlaceService {
     @Transactional
     public Place getPlace(int id) {
         log.info("Get Place 진행");
-        return storeRepository.findById(id);
+        return storeRepository.findByIdWithItems(id);
     }
-
-
 
 }
