@@ -1,5 +1,8 @@
 package com.choi.weplay.controller;
 
+import com.choi.weplay.domain.Buy;
+import com.choi.weplay.domain.Pick;
+import com.choi.weplay.domain.User;
 import com.choi.weplay.service.PlaceService;
 import com.choi.weplay.service.ReviewService;
 import com.choi.weplay.service.UserService;
@@ -9,6 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -25,11 +31,11 @@ public class UserController {
         return "mypage";
     }
 
-    @GetMapping("/api/user/{id}/pick")
-    public String userPick(@PathVariable int id, Model model) {
-        log.info("User 찜 목록 API 진행");
-
-        return "mypage";
+    @ResponseBody
+    @GetMapping("/api/user/{id}/buy")
+    public List<Buy> userPick(@PathVariable int id, Model model) {
+        log.info("API User BuyList 접속 진행");
+        return userService.getBuyList(id);
     }
 
 

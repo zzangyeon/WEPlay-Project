@@ -1,9 +1,9 @@
 .profile{
     display: flex;
     height: 180px;
-    margin-bottom: 55px;
+    margin-bottom: 90px;
     border: solid 2px lightgray;
-    border-radius: 5px;
+    border-radius: 10px;
     /* background-color: ; */
 }
 .user-image-outline{
@@ -53,6 +53,32 @@
 }
 
 .content{
-    height: 500px;
-    background-color: #fff8d9;
+    border: 2px solid skyblue;
+}
+.buy-item{
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+.place-name{
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(109, 109, 109);
+    margin-right: 100px;
+}
+.item-name{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 100px;
+}
+.price{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 100px;
+}
+.date{
+    font-size: 15px;
+    color: rgb(109, 109, 109);
 }

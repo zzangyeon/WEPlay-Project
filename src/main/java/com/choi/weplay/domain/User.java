@@ -28,5 +28,5 @@ public class User {
     List<Review> reviews;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    List<Orders> orders;
+    List<Buy> buys;
 }
