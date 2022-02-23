@@ -2,6 +2,7 @@ package com.choi.weplay.controller;
 
 import com.choi.weplay.domain.Buy;
 import com.choi.weplay.domain.Pick;
+import com.choi.weplay.domain.Review;
 import com.choi.weplay.domain.User;
 import com.choi.weplay.service.PlaceService;
 import com.choi.weplay.service.ReviewService;
@@ -22,10 +23,10 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-
+    private final ReviewService reviewService;
 
     @GetMapping("/user/{id}")
-    public String homeByRegion(@PathVariable int id, Model model) {
+    public String mypage(@PathVariable int id, Model model) {
         log.info("마이페이지 접속 진행");
         model.addAttribute("user", userService.getUser(id));
         return "mypage";
@@ -33,9 +34,23 @@ public class UserController {
 
     @ResponseBody
     @GetMapping("/api/user/{id}/buy")
-    public List<Buy> userPick(@PathVariable int id, Model model) {
+    public List<Buy> mypageBuy(@PathVariable int id, Model model) {
         log.info("API User BuyList 접속 진행");
         return userService.getBuyList(id);
+    }
+
+    @ResponseBody
+    @GetMapping("/api/user/{id}/review")
+    public List<Review> mypageReview(@PathVariable int id, Model model) {
+        log.info("API User ReviewList 접속 진행");
+        return reviewService.getReviewListByUserId(id);
+    }
+
+    @ResponseBody
+    @GetMapping("/api/user/{id}/pick")
+    public List<Pick> mypagePick(@PathVariable int id, Model model) {
+        log.info("API User PickList 접속 진행");
+        return userService.getPickList(id);
     }
 
 

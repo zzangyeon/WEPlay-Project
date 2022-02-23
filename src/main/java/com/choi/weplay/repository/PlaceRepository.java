@@ -10,7 +10,7 @@ public interface PlaceRepository extends JpaRepository<Place, Integer> {
 
     List<Place> findByRegion(String region);
 
-    @Query(value = "SELECT p FROM Place p join fetch p.items where p.id = :id")
+    @Query(value = "SELECT p FROM Place p left join p.items i ON p.id = i.place.id WHERE p.id = :id")
     Place findByIdWithItems(int id);
 
 }

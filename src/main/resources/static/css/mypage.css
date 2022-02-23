@@ -52,8 +52,10 @@
     background-color: rgb(70, 104, 165);
 }
 
+
 .content{
     border: 2px solid skyblue;
+    border-radius: 10px;
 }
 .buy-item{
     display: flex;
@@ -63,22 +65,88 @@
     border-bottom: 1px solid rgb(209, 209, 209);
 }
 .place-name{
+    width: 120px;
     font-size: 20px;
     font-weight: 600;
-    color: rgb(109, 109, 109);
-    margin-right: 100px;
+    color: rgb(136, 136, 136);
+    margin-right: 70px;
 }
 .item-name{
+    width: 230px;
     font-size: 20px;
     font-weight: 600;
     margin-right: 100px;
 }
 .price{
+    width: 100px;
     font-size: 20px;
     font-weight: 600;
     margin-right: 100px;
 }
 .date{
     font-size: 15px;
-    color: rgb(109, 109, 109);
+    color: rgb(190, 190, 190);
+}
+
+
+.review-item{
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+.review-place-name{
+    width: 120px;
+    font-size: 17px;
+    font-weight: 600;
+    color: rgb(136, 136, 136);
+    margin-right: 100px;
+}
+.review-content{
+    width: 300px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 25px;
+}
+.review-image{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 100px;
+}
+.review-date{
+    font-size: 15px;
+    color: rgb(175, 175, 175);
+}
+
+
+.pick-item{
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+.pick-place-thumbnail{
+    width: 130px;
+    font-size: 15px;
+    margin-right: 20px;
+}
+.pick-place-region{
+    width: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-right: 60px;
+}
+.pick-place-name{
+    width: 120px;
+    font-size: 17px;
+    font-weight: 600;
+    color: rgb(136, 136, 136);
+    margin-right: 60px;
+}
+.pick-place-content{
+    width: 300px;
+    font-size: 17px;
+    font-weight: 300;
 }

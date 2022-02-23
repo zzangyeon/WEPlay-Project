@@ -22,7 +22,7 @@ public class Place {
     private String region;
     private String category;
     private String thumbnail;
-    @Column(nullable = false)
+//    @Column(nullable = false)
     private String name;
     private String content;
     private String tel;

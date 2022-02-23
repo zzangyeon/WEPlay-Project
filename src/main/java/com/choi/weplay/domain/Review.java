@@ -23,12 +23,13 @@ public class Review {
     private String image;
     private String regdate;
 
-    /*@JsonIgnore
-    @JsonIgnoreProperties({"articles"})*/
+
+    @JsonIgnoreProperties({"items"})
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="place_id")
     private Place place;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;

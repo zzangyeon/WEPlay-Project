@@ -5,8 +5,8 @@ import com.choi.weplay.repository.PlaceRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -16,13 +16,13 @@ public class PlaceService {
 
     private final PlaceRepository placeRepository;
 
-    @Transactional
+    @Transactional(readOnly = true)
     public List<Place> getPlaceList(String region) {
         log.info("Get Place List 진행");
         return placeRepository.findByRegion(region);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public Place getPlace(int id) {
         log.info("Get Place 진행");
         return placeRepository.findByIdWithItems(id);

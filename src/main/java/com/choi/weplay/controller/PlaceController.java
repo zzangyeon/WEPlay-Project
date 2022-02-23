@@ -1,6 +1,7 @@
 package com.choi.weplay.controller;
 
 import com.choi.weplay.domain.Place;
+import com.choi.weplay.domain.Review;
 import com.choi.weplay.service.PlaceService;
 import com.choi.weplay.service.ReviewService;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 @Slf4j
@@ -40,8 +42,9 @@ public class PlaceController {
     @GetMapping("/place/{id}")
     public String placeDetail(@PathVariable int id, Model model) {
         log.info("place detail 접속 진행");
-        model.addAttribute("reviews", reviewService.getReviewList(id));
-        model.addAttribute("place", placeService.getPlace(id));
+        model.addAttribute("reviews", reviewService.getReviewListByPlaceId(id));
+        Place place = placeService.getPlace(id);
+        model.addAttribute("place", place);
         return "detail";
     }
 
