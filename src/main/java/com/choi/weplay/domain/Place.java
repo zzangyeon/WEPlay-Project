@@ -34,4 +34,7 @@ public class Place {
     @OneToMany(mappedBy = "place",fetch = FetchType.LAZY)
     private List<Item> items;
 
+    @OneToMany(mappedBy = "place",fetch = FetchType.LAZY)
+    private List<Review> reviews;
+
 }

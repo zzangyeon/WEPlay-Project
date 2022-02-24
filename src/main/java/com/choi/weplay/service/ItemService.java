@@ -14,21 +14,14 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class PlaceService {
+public class ItemService {
 
-    private final PlaceRepository placeRepository;
-
-    @Transactional(readOnly = true)
-    public List<Place> getPlaceList(String region) {
-        log.info("Get Place List 진행");
-        return placeRepository.findByRegion(region);
-    }
+    private final ItemRepository itemRepository;
 
     @Transactional(readOnly = true)
-    public Place getPlace(int id) {
-        log.info("Get Place 진행");
-        return placeRepository.findById(id);
+    public Item getItem(int id) {
+        log.info("Get Item 진행");
+        return itemRepository.findById(id);
     }
-
 
 }

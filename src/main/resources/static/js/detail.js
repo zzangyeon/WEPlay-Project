@@ -1,23 +1,21 @@
-// 결제 모달창 띄우기
-function paymentModalOpen(placeId) {
-    $(".modal-payment").css("display", "flex");
+function paymentModalOpen(itemId){
 
-    /*$.ajax({
+    $.ajax({
         type:"get",
-        url: `/api/payment/${placeId}`,
+        url: `/api/payment/${itemId}`,
         dataType: "json"
     }).done(res=>{
-        console.log(res.data);
 
-        *//*res.data.forEach((s)=>{
-            let item = getSubscribeModalItem(s);
-            $(".subscribeList-container").append(item);*//*
-        })
+        console.log(res);
+        $('.pay-item-name').text(res.name);
+        $('.pay-item-price').text("결제 금액 : " + res.price);
+
     }).fail(error=>{
-        alert("실패")
-    });*/
-}
+        alert("결제 api통신 실패")
+    });
 
+    $(".modal-payment").css("display", "flex");
+}
 /*
 function getSubscribeModalItem(s) {
     let item = `

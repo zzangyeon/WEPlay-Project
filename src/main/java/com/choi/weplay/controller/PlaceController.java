@@ -2,6 +2,7 @@ package com.choi.weplay.controller;
 
 import com.choi.weplay.domain.Place;
 import com.choi.weplay.domain.Review;
+import com.choi.weplay.repository.PlaceRepository;
 import com.choi.weplay.service.PlaceService;
 import com.choi.weplay.service.ReviewService;
 import lombok.RequiredArgsConstructor;
@@ -43,9 +44,11 @@ public class PlaceController {
     public String placeDetail(@PathVariable int id, Model model) {
         log.info("place detail 접속 진행");
         model.addAttribute("reviews", reviewService.getReviewListByPlaceId(id));
-        Place place = placeService.getPlace(id);
-        model.addAttribute("place", place);
+        model.addAttribute("place", placeService.getPlace(id));
         return "detail";
     }
+
+
+
 
 }
