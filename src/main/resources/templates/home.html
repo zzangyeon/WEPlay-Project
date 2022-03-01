@@ -8,7 +8,15 @@
     </div>
 
     <div class="region" th:text="${region}">강남구</div>
-    <div class="region" th:onclick="|location.href='/region/서초구'|">서초구</div>
+    <form action="/place">
+        <select name="region">
+            <option value="강남구">강남구</option>
+            <option value="서초구">서초구</option>
+            <option value="용산구">용산구</option>
+            <option value="송파구">송파구</option>
+        </select>
+        <input type="submit">
+    </form>
     <button class="region" th:onclick="|location.href='/user/1'|">마이페이지</button>
 
     <div class="home-container">

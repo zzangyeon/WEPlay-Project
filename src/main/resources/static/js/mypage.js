@@ -5,7 +5,6 @@ function getBuyList(userId){
         url: `/api/user/${userId}/buy`,
         dataType: "json"
     }).done(res=>{
-        console.log(res);
 
         let buyItemList;
         res.forEach((i)=>{
@@ -36,7 +35,6 @@ function getReviewList(userId){
             url: `/api/user/${userId}/review`,
             dataType: "json"
         }).done(res=>{
-            console.log(res);
 
             let reviewItemList;
             res.forEach((i)=>{
@@ -67,7 +65,6 @@ function getPickList(userId){
             url: `/api/user/${userId}/pick`,
             dataType: "json"
         }).done(res=>{
-            console.log(res);
 
             let pickItemList;
             res.forEach((i)=>{

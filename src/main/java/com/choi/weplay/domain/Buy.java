@@ -23,7 +23,7 @@ public class Buy {
     private String regdate;
     private int total;
 
-    @JsonIgnoreProperties({"items"})
+    @JsonIgnoreProperties({"items","reviews"})
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="place_id")
     private Place place;

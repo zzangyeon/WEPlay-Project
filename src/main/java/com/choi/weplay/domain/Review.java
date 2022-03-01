@@ -24,7 +24,7 @@ public class Review {
     private String regdate;
 
 
-    @JsonIgnoreProperties({"items"})
+    @JsonIgnoreProperties({"items","reviews"})
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="place_id")
     private Place place;

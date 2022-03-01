@@ -48,6 +48,12 @@ public class PlaceController {
         return "detail";
     }
 
+    @GetMapping("/test")
+    public String test3(Model model) {
+        model.addAttribute("test", "test");
+        return "test";
+    }
+
 
 
 

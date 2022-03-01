@@ -14,4 +14,5 @@ public interface PlaceRepository extends JpaRepository<Place, Integer> {
     @EntityGraph(attributePaths = {"items"})
     Place findById(int id);
 
+
 }
