@@ -38,6 +38,16 @@ class PlaceControllerTest {
     @Test
     void home() throws Exception {
 
+        //given
+        //when
+        ResultActions actions = mvc.perform(get("/"));
+        //then
+        actions.andExpect(model().attribute("places",placeService.getPlaceList("11")));
+    }
+
+    @Test
+    void home2() throws Exception {
+
         Place place1 = new Place();
         place1.setId(1);
         Place place2 = new Place();
@@ -47,12 +57,11 @@ class PlaceControllerTest {
         placeList.add(place2);
 
         //given
+        given(placeService.getPlaceList(any())).willReturn(placeList);
         //when
         ResultActions actions = mvc.perform(get("/"));
         //then
-        actions.andExpect(model().attribute("region","강남구")).andExpect(model().attribute("places",placeService.getPlaceList("서초구")));
-
-
+        actions.andExpect(model().attribute("region","강남구")).andExpect(model().attribute("places", placeList));
     }
 
     @Test
