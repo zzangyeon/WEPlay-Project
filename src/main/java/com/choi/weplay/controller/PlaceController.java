@@ -1,8 +1,6 @@
 package com.choi.weplay.controller;
 
 import com.choi.weplay.domain.Place;
-import com.choi.weplay.domain.Review;
-import com.choi.weplay.repository.PlaceRepository;
 import com.choi.weplay.service.PlaceService;
 import com.choi.weplay.service.ReviewService;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 @Slf4j
 @Controller
@@ -26,7 +23,7 @@ public class PlaceController {
 
     @GetMapping("/")
     public String home(Model model) {
-        log.info("home 접속 진행");
+        log.info("====home 접속 진행====");
         model.addAttribute("region","강남구");
         model.addAttribute("places", placeService.getPlaceList("강남구"));
         return "home";

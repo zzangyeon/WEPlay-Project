@@ -2,6 +2,7 @@ var IMP = window.IMP;
 
 //결제 모달창 열기
 function paymentModalOpen(itemId){
+
     $.ajax({
         type:"get",
         url: `/api/payment/${itemId}`,
@@ -30,14 +31,14 @@ function requestPay() {
   IMP.request_pay({ // param
       pg: "html5_inicis",
       pay_method: "card",
-      merchant_uid: "ORD20180131-0000012",
-      name: "노르웨이 회전 의자",
-      amount: 100,
-      buyer_email: "gildong@gmail.com",
-      buyer_name: "홍길동",
-      buyer_tel: "010-4242-4242",
-      buyer_addr: "서울특별시 강남구 신사동",
-      buyer_postcode: "01181"
+      merchant_uid: "ASD20180131-1907013",
+      name: "의자2",
+      amount: 1,
+      buyer_email: "hello@naver.com",
+      buyer_name: "김안녕",
+      buyer_tel: "010-1234-1234",
+      buyer_addr: "경기도 용인시 수지구",
+      buyer_postcode: "77777"
   }, function (rsp) { // callback
       if (rsp.success) {
           /*jQuery.ajax({
@@ -59,8 +60,6 @@ function requestPay() {
       }
   });
 }
-
-
 
 /*function getSubscribeModalItem(s) {
     let item = `

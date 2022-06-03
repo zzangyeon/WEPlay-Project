@@ -15,6 +15,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Item {
 
+    public Item(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

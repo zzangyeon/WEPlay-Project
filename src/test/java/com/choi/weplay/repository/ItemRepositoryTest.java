@@ -23,6 +23,5 @@ class ItemRepositoryTest {
     void findById() {
         Item item = itemRepository.findById(2);
         assertEquals(item.getPrice(),15000);
-
     }
 }

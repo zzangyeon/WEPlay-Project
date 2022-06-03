@@ -30,5 +30,4 @@ public class PlaceService {
         return placeRepository.findById(id);
     }
 
-
 }
